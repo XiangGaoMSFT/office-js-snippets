@@ -31,6 +31,6 @@
   description: Calls the GitHub API to get the star count for an org/user and repository.
   rawUrl: >-
     https://raw.githubusercontent.com/XiangGaoMSFT/office-js-snippets/deploy-beta/samples/excel/16-custom-functions/web-call-function.yaml
-  group: Custom Functions
+  group: Custom Functions Test Group
   api_set:
     CustomFunctionsRuntime: 1.1
