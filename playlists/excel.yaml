@@ -1,52 +1,64 @@
 - id: excel-custom-functions-basic
+  iconName: 'OfficeAddinsLogo'
   name: Basic custom function
   fileName: basic-function.yaml
   description: Calculates the volume of a sphere.
+  status: ''
   rawUrl: >-
     https://raw.githubusercontent.com/XiangGaoMSFT/office-js-snippets/deploy-beta/samples/excel/16-custom-functions/basic-function.yaml
   group: Custom Functions
   api_set:
     CustomFunctionsRuntime: 1.1
 - id: excel-custom-functions-volatile
+  iconName: 'OfficeAddinsLogo'
   name: Volatile function
   fileName: volatile-function.yaml
   description: Rolls a 6 sided die that returns a possible new value every calculation.
+  status: 'Updated'
   rawUrl: >-
     https://raw.githubusercontent.com/XiangGaoMSFT/office-js-snippets/deploy-beta/samples/excel/16-custom-functions/volatile-function.yaml
   group: Custom Functions
   api_set:
     CustomFunctionsRuntime: 1.1
 - id: excel-custom-functions-streaming
+  iconName: 'RepeatAll'
   name: Streaming function
   fileName: streaming-function.yaml
   description: A streaming function that continuously increments the cell value.
+  status: 'Updated'
   rawUrl: >-
     https://raw.githubusercontent.com/XiangGaoMSFT/office-js-snippets/deploy-beta/samples/excel/16-custom-functions/streaming-function.yaml
   group: Custom Functions
   api_set:
     CustomFunctionsRuntime: 1.1
 - id: excel-custom-functions-web-call
+  iconName: 'EdgeLogo'
   name: Web request to GitHub API
   fileName: web-call-function.yaml
   description: Calls the GitHub API to get the star count for an org/user and repository.
+  status: ''
   rawUrl: >-
     https://raw.githubusercontent.com/XiangGaoMSFT/office-js-snippets/deploy-beta/samples/excel/16-custom-functions/web-call-function.yaml
   group: Custom Functions Test Group
   api_set:
     CustomFunctionsRuntime: 1.1
 - id: excel-custom-functions-translate
+  iconName: 'Translate'
   name: Translate
   fileName: translate.yaml
   description: Translate description.
+  status: 'New'
   rawUrl: >-
     https://raw.githubusercontent.com/XiangGaoMSFT/office-js-snippets/deploy-beta/samples/excel/16-custom-functions/translate.yaml
   group: Utilities
   api_set:
     CustomFunctionsRuntime: 1.1
 - id: excel-custom-functions-stock
+  iconName: 'Financial'
   name: getStockInfo
   fileName: getStockInfo.yaml
   description: Return stock info.
+  status: 'New'
   rawUrl: >-
     https://raw.githubusercontent.com/XiangGaoMSFT/office-js-snippets/deploy-beta/samples/excel/16-custom-functions/getStockInfo.yaml
   group: Utilities
