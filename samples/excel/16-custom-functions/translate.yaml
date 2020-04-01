@@ -11,30 +11,40 @@ script:
         * @customfunction
         * @returns {any[][]} A dynamic array with multiple results.
         */
-        function translate3(texts: any[][], langLocale: string)
-        {
+        function translate(texts: any[][], langLocale: string) {
             var tot = 0;
             var n = texts.length;
             var m = texts[0].length;
             var xhrs = [];
             var ret = [];
-            return new Promise(function (resolve) {
+            return new Promise(function(resolve) {
                 for (var i = 0; i < n; i++) {
                     xhrs.push([]);
                     for (var j = 0; j < m; j++) {
                         var text = texts[i][j];
-                        if (!(typeof text === 'string')) {
+                        if ((text == null) || ((typeof text === 'number') && (text === 0))) {
                             tot++;
+                            texts[i][j] = "";
+                            if (tot == n * m) {
+                                resolve(texts);
+                            }
                             continue;
                         }
-
+                        if (!(typeof text === 'string')) {
+                            tot++;
+                            if (tot == n * m) {
+                                resolve(texts);
+                            }
+                            continue;
+                        }
                         console.log(text);
                         var xhr = new XMLHttpRequest();
                         var textStr = encodeURIComponent(text);
                         var localeStr = encodeURIComponent(langLocale);
                         var url = "https://excelcf-demo-api.azurewebsites.net/api/translate?code=F69Va5ojUPvfnat9udiM8OpEcScy/oK3bV8/wBYW8OXlypR3nyV/AA==&name=" + text + "&locale=" + localeStr;
+
                         function func(i, j, xhr) {
-                            xhr.onreadystatechange = function () {
+                            xhr.onreadystatechange = function() {
                                 if (xhr.readyState === XMLHttpRequest.DONE) {
                                     var ss: string = xhr.responseText;
                                     texts[i][j] = ss.substr(1, ss.length - 2);
@@ -47,7 +57,6 @@ script:
                                 }
                             }
                         };
-
                         func(i, j, xhr);
                         xhr.open('GET', url, true);
                         xhr.send();
