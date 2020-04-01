@@ -34,3 +34,12 @@
   group: Custom Functions Test Group
   api_set:
     CustomFunctionsRuntime: 1.1
+- id: excel-custom-functions-translate
+  name: Translate
+  fileName: translate.yaml
+  description: Translate description.
+  rawUrl: >-
+    https://raw.githubusercontent.com/XiangGaoMSFT/office-js-snippets/deploy-beta/samples/excel/16-custom-functions/translate.yaml
+  group: Utilities
+  api_set:
+    CustomFunctionsRuntime: 1.1

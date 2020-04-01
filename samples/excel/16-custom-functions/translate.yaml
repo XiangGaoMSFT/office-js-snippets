@@ -1,0 +1,62 @@
+order: 1
+id: Translate
+name: Basic custom function
+description: Calculates the volume of a sphere.
+host: EXCEL
+api_set:
+    CustomFunctionsRuntime: 1.1
+script:
+    content: |
+        /**
+        * @customfunction
+        * @returns {any[][]} A dynamic array with multiple results.
+        */
+        function translate3(texts: any[][], langLocale: string)
+        {
+            var tot = 0;
+            var n = texts.length;
+            var m = texts[0].length;
+            var xhrs = [];
+            var ret = [];
+            return new Promise(function (resolve) {
+                for (var i = 0; i < n; i++) {
+                    xhrs.push([]);
+                    for (var j = 0; j < m; j++) {
+                        var text = texts[i][j];
+                        if (!(typeof text === 'string')) {
+                            tot++;
+                            continue;
+                        }
+
+                        console.log(text);
+                        var xhr = new XMLHttpRequest();
+                        var textStr = encodeURIComponent(text);
+                        var localeStr = encodeURIComponent(langLocale);
+                        var url = "https://excelcf-demo-api.azurewebsites.net/api/translate?code=F69Va5ojUPvfnat9udiM8OpEcScy/oK3bV8/wBYW8OXlypR3nyV/AA==&name=" + text + "&locale=" + localeStr;
+                        function func(i, j, xhr) {
+                            xhr.onreadystatechange = function () {
+                                if (xhr.readyState === XMLHttpRequest.DONE) {
+                                    var ss: string = xhr.responseText;
+                                    texts[i][j] = ss.substr(1, ss.length - 2);
+                                    tot++;
+                                    console.log(i + " " + j + " " + tot + " " + xhr.responseText);
+                                    if (tot == texts.length * texts[0].length) {
+                                        console.log(JSON.stringify(texts));
+                                        resolve(texts)
+                                    }
+                                }
+                            }
+                        };
+
+                        func(i, j, xhr);
+                        xhr.open('GET', url, true);
+                        xhr.send();
+                    }
+                }
+            });
+        }
+    language: typescript
+libraries: |
+    https://appsforoffice.microsoft.com/lib/1/hosted/office.js
+    @types/office-js
+    core-js@2.4.1/client/core.min.js
