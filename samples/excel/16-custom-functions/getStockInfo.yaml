@@ -1,0 +1,42 @@
+name: Custom function for stock
+description: Return stock info.
+host: EXCEL
+api_set: {}
+script:
+  content: |
+    /**
+     * Return stock info
+     * @customfunction
+     * @param {string} radius
+     * @returns {any[][]}
+     */
+    function getStockInfo(stockCode) {
+      return new Promise(
+        function (resolve) {
+          let xhr = new XMLHttpRequest();
+          let url = "https://cloud.iexapis.com/stable/stock/" + stockCode + "/quote?token=pk_b66e58832f46464bb45fd6cc62337601";
+          //add handler for xhr
+          xhr.onreadystatechange = function () {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+              var res = [];
+              var index = 0;
+              var json = JSON.parse(xhr.responseText)
+              for (var key in json) {
+                res[index] = [];
+                res[index].push(key);
+                res[index].push(json[key]);
+                index++;
+              }
+              resolve(res);
+            }
+          };
+          //make request
+          xhr.open('GET', url, true);
+          xhr.send();
+        });
+    }
+  language: typescript
+libraries: |
+  https://appsforoffice.microsoft.com/lib/1/hosted/office.js
+  @types/office-js
+  core-js@2.4.1/client/core.min.js

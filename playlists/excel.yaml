@@ -43,3 +43,12 @@
   group: Utilities
   api_set:
     CustomFunctionsRuntime: 1.1
+- id: excel-custom-functions-stock
+  name: getStockInfo
+  fileName: getStockInfo.yaml
+  description: Return stock info.
+  rawUrl: >-
+    https://raw.githubusercontent.com/XiangGaoMSFT/office-js-snippets/deploy-beta/samples/excel/16-custom-functions/getStockInfo.yaml
+  group: Utilities
+  api_set:
+    CustomFunctionsRuntime: 1.1
