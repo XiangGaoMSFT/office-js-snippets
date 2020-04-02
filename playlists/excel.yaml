@@ -53,6 +53,17 @@
   group: Utilities
   api_set:
     CustomFunctionsRuntime: 1.1
+- id: excel-custom-functions-locale
+  iconName: 'LocaleLanguage'
+  name: Locale
+  fileName: translate.yaml
+  description: Get the locale information.
+  status: ''
+  rawUrl: >-
+    https://raw.githubusercontent.com/XiangGaoMSFT/office-js-snippets/deploy-beta/samples/excel/16-custom-functions/translate.yaml
+  group: Utilities
+  api_set:
+    CustomFunctionsRuntime: 1.1
 - id: excel-custom-functions-stock
   iconName: 'Financial'
   name: getStockInfo
