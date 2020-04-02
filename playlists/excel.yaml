@@ -119,11 +119,6 @@
   group: Utilities
   api_set:
     CustomFunctionsRuntime: 1.1
-- id: excel-custom-functions-stock
-  iconName: 'Financial'
-  name: getStockInfo
-  fileName: getStockInfo.yaml
-  description: Return stock info.
 - id: excel-custom-functions-faceAnalysis
   iconName: 'Family'
   name: faceAnalysis
