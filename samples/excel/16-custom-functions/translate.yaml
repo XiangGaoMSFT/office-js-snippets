@@ -1,4 +1,4 @@
-order: 1
+order: 10
 id: Translate
 name: Basic custom function
 description: Calculates the volume of a sphere.

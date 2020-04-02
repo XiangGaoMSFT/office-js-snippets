@@ -1,7 +1,10 @@
+order: 5
+id: excel-custom-functions-stock
 name: Custom function for stock
 description: Return stock info.
 host: EXCEL
-api_set: {}
+api_set:
+  CustomFunctionsRuntime: 1.1
 script:
   content: |
     /**

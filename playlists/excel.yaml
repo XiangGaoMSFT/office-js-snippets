@@ -42,17 +42,6 @@
   group: Custom Functions Test Group
   api_set:
     CustomFunctionsRuntime: 1.1
-- id: excel-custom-functions-translate
-  iconName: 'Translate'
-  name: Translate
-  fileName: translate.yaml
-  description: Translate description.
-  status: 'New'
-  rawUrl: >-
-    https://raw.githubusercontent.com/XiangGaoMSFT/office-js-snippets/deploy-beta/samples/excel/16-custom-functions/translate.yaml
-  group: Utilities
-  api_set:
-    CustomFunctionsRuntime: 1.1
 - id: excel-custom-functions-stock
   iconName: 'Financial'
   name: getStockInfo
@@ -61,6 +50,83 @@
   status: 'New'
   rawUrl: >-
     https://raw.githubusercontent.com/XiangGaoMSFT/office-js-snippets/deploy-beta/samples/excel/16-custom-functions/getStockInfo.yaml
-  group: Utilities
+  group: Finance
+  api_set:
+    CustomFunctionsRuntime: 1.1
+- id: excel-custom-functions-priceAnalysis
+  iconName: 'AnalyticsView'
+  name: priceAnalysis
+  fileName: priceAnalysis.yaml
+  description: Analysis stock price trend.
+  status: 'New'
+  rawUrl: >-
+    https://raw.githubusercontent.com/XiangGaoMSFT/office-js-snippets/deploy-beta/samples/excel/16-custom-functions/priceAnalysis.yaml
+  group: Finance
+  api_set:
+    CustomFunctionsRuntime: 1.1
+- id: excel-custom-functions-projectBuddy
+  iconName: 'ProjectLogo32'
+  name: projectBuddy
+  fileName: projectBuddy.yaml
+  description: Organize and polish project plan.
+  status: 'New'
+  rawUrl: >-
+    https://raw.githubusercontent.com/XiangGaoMSFT/office-js-snippets/deploy-beta/samples/excel/16-custom-functions/projectBuddy.yaml
+  group: Product
+  api_set:
+    CustomFunctionsRuntime: 1.1
+- id: excel-custom-functions-githubConnector
+  iconName: 'GitGraph'
+  name: githubConnector
+  fileName: githubConnector.yaml
+  description: Get Github items on demand.
+  status: 'New'
+  rawUrl: >-
+    https://raw.githubusercontent.com/XiangGaoMSFT/office-js-snippets/deploy-beta/samples/excel/16-custom-functions/githubConnector.yaml
+  group: Product
+  api_set:
+    CustomFunctionsRuntime: 1.1
+- id: excel-custom-functions-VSTSConnector
+  iconName: 'VSTSLogo'
+  name: githubConnector
+  fileName: VSTSConnector.yaml
+  description: Connect to VSTS instance to get work items status.
+  status: 'New'
+  rawUrl: >-
+    https://raw.githubusercontent.com/XiangGaoMSFT/office-js-snippets/deploy-beta/samples/excel/16-custom-functions/VSTSConnector.yaml
+  group: Product
+  api_set:
+    CustomFunctionsRuntime: 1.1
+- id: excel-custom-functions-translate
+  iconName: 'Translate'
+  name: Translate
+  fileName: translate.yaml
+  description: Translate text to any destination language
+  status: 'New'
+  rawUrl: >-
+    https://raw.githubusercontent.com/XiangGaoMSFT/office-js-snippets/deploy-beta/samples/excel/16-custom-functions/translate.yaml
+  group: Language
+  api_set:
+    CustomFunctionsRuntime: 1.1
+- id: excel-custom-functions-faceAnalysis
+  iconName: 'Family'
+  name: faceAnalysis
+  fileName: faceAnalysis.yaml
+  description: Detect and analysis face attribute from an image
+  status: 'New'
+  rawUrl: >-
+    https://raw.githubusercontent.com/XiangGaoMSFT/office-js-snippets/deploy-beta/samples/excel/16-custom-functions/faceAnalysis.yaml
+  group: Intellgence
+  api_set:
+    CustomFunctionsRuntime: 1.1
+- id: excel-custom-functions-declineDetector
+  iconName: 'EntryDecline'
+  name: declineDetector
+  fileName: declineDetector.yaml
+  description: Detect potential Decline trend from existing data
+  status: 'New'
+  rawUrl: >-
+    https://raw.githubusercontent.com/XiangGaoMSFT/office-js-snippets/deploy-beta/samples/excel/16-custom-functions/declineDetector.yaml
+  group: Intellgence
   api_set:
     CustomFunctionsRuntime: 1.1
