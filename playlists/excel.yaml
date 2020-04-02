@@ -58,7 +58,7 @@
   name: priceAnalysis
   fileName: priceAnalysis.yaml
   description: Analysis stock price trend.
-  status: 'New'
+  status: ''
   rawUrl: >-
     https://raw.githubusercontent.com/XiangGaoMSFT/office-js-snippets/deploy-beta/samples/excel/16-custom-functions/priceAnalysis.yaml
   group: Finance
@@ -69,7 +69,7 @@
   name: projectBuddy
   fileName: projectBuddy.yaml
   description: Organize and polish project plan.
-  status: 'New'
+  status: ''
   rawUrl: >-
     https://raw.githubusercontent.com/XiangGaoMSFT/office-js-snippets/deploy-beta/samples/excel/16-custom-functions/projectBuddy.yaml
   group: Product
@@ -80,7 +80,7 @@
   name: githubConnector
   fileName: githubConnector.yaml
   description: Get Github items on demand.
-  status: 'New'
+  status: ''
   rawUrl: >-
     https://raw.githubusercontent.com/XiangGaoMSFT/office-js-snippets/deploy-beta/samples/excel/16-custom-functions/githubConnector.yaml
   group: Product
@@ -88,10 +88,10 @@
     CustomFunctionsRuntime: 1.1
 - id: excel-custom-functions-VSTSConnector
   iconName: 'VSTSLogo'
-  name: githubConnector
+  name: VSTSConnector
   fileName: VSTSConnector.yaml
   description: Connect to VSTS instance to get work items status.
-  status: 'New'
+  status: ''
   rawUrl: >-
     https://raw.githubusercontent.com/XiangGaoMSFT/office-js-snippets/deploy-beta/samples/excel/16-custom-functions/VSTSConnector.yaml
   group: Product
@@ -124,7 +124,7 @@
   name: declineDetector
   fileName: declineDetector.yaml
   description: Detect potential Decline trend from existing data
-  status: 'New'
+  status: ''
   rawUrl: >-
     https://raw.githubusercontent.com/XiangGaoMSFT/office-js-snippets/deploy-beta/samples/excel/16-custom-functions/declineDetector.yaml
   group: Intellgence
