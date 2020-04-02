@@ -8,13 +8,64 @@ api_set:
 script:
     content: |
         /**
-         * Calculates the volume of a sphere. 
-         * @customfunction
-         * @param {number} radius
-         * @returns The volume of the sphere.
-         */
-        function faceAnalysis(radius) {
-          return 0;
+        * Face analysis.
+        * @customfunction
+        * @return {any[][]} The array of face detection result
+        */
+        function faceAnalysis(imageUrl: string) {
+            const subscriptionKey = "108834f92e474f2281d762c05efbb87d";
+            const baseUrl = "https://westus2.api.cognitive.microsoft.com/face/v1.0/detect";
+
+            // Request parameters
+            const returnFaceId = 'returnFaceId=true';
+            const returnFaceLandmarks = 'returnFaceLandmarks=false';
+            const returnFaceAttributes = 'returnFaceAttributes=age,gender,headPose,smile,facialHair,glasses,emotion,hair,makeup,occlusion,accessories,blur,exposure,noise'; 
+
+            let url = baseUrl + "?" + `${returnFaceId}` + "&" + `${returnFaceLandmarks}` + "&" + `${returnFaceAttributes}`;
+            
+            console.log("url: " + url);
+            
+            let xhttp = new XMLHttpRequest();
+            //let imageUrl = "https://homepages.cae.wisc.edu/~ece533/images/girl.png";
+
+            return new Promise(function (resolve, reject) {
+                try
+                {
+                let data = '{"url": ' + `"` + `${imageUrl}` + '"}';
+
+                console.log("body: " + data);
+
+                xhttp.onreadystatechange = function () {
+                if (xhttp.readyState !== 4) return;
+
+                if (xhttp.status == 200) {
+                    let response =      JSON.parse(xhttp.responseText);
+                    console.log(response.length);
+
+                    var resArray = []
+                    for(var i = 0; i < response.length; i++)
+                    {
+                    resArray.push([response[i].faceAttributes.gender, response[i].faceAttributes.age, response[i].faceAttributes.smile, response[i].faceAttributes.glasses, response[i].faceAttributes.emotion.happiness, + response[i].faceAttributes.emotion.sadness, + response[i].faceAttributes.emotion.surprise, response[i].faceAttributes.emotion.neutral]);  
+                    }
+
+                    resolve(resArray);
+                } else {
+                    reject({
+                        status: xhttp.status,
+
+                        statusText: xhttp.statusText
+                    });
+                }
+                };
+
+                xhttp.open("POST", url, true);
+                xhttp.setRequestHeader("Content-Type", "application/json");
+                xhttp.setRequestHeader("Ocp-Apim-Subscription-Key", `${subscriptionKey}`);
+                xhttp.send(data);
+                
+            }catch(e){
+                resolve(JSON.stringify(e))
+            }});
         }
     language: typescript
 libraries: |
