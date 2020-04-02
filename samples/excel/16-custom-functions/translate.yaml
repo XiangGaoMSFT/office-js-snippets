@@ -1,7 +1,7 @@
-order: 1
+order: 10
 id: Translate
-name: Basic custom function
-description: Calculates the volume of a sphere.
+name: Translate
+description: Translate the given range to any languages.
 host: EXCEL
 api_set:
     CustomFunctionsRuntime: 1.1
