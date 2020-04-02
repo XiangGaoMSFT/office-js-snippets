@@ -24,7 +24,7 @@ script:
                         var text = texts[i][j];
                         if ((text == null) || ((typeof text === 'number') && (text === 0))) {
                             tot++;
-                            texts[i][j] = "";
+                            //texts[i][j] = ;
                             if (tot == n * m) {
                                 resolve(texts);
                             }
