@@ -1,4 +1,4 @@
-order: 1
+order: 10
 id: Translate
 name: Translate
 description: Translate the given range to any languages.

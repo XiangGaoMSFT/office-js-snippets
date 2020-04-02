@@ -1,0 +1,23 @@
+order: 12
+id: excel-custom-functions-declineDetector
+name: declineDetector
+description: Detect potential Decline trend from existing data.
+host: EXCEL
+api_set:
+    CustomFunctionsRuntime: 1.1
+script:
+    content: |
+        /**
+         * Calculates the volume of a sphere. 
+         * @customfunction
+         * @param {number} radius
+         * @returns The volume of the sphere.
+         */
+        function declineDetector(radius) {
+          return 0;
+        }
+    language: typescript
+libraries: |
+    https://appsforoffice.microsoft.com/lib/1/hosted/office.js
+    @types/office-js
+    core-js@2.4.1/client/core.min.js
